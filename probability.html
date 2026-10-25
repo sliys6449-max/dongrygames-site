@@ -2,22 +2,29 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>확률 정보 - Dongry Games</title>
 <meta name="description" content="이세계 히어로 확률 정보 (한국어)">
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0912" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="index.html">Dongry Games</a>
-  <nav>
-    <a href="index.html">소개</a>
-    <a href="privacy.html">개인정보처리방침</a>
-    <a href="probability.html" aria-current="page">확률 정보</a>
-  </nav>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="brand" href="index.html">Dongry Games</a>
+    <nav aria-label="주요 메뉴">
+      <a href="index.html" data-nav="game">이세계 히어로</a>
+      <a href="privacy.html" data-nav="policy">방침</a>
+      <a href="mailto:whitesulhee@gmail.com">문의</a>
+    </nav>
+  </div>
 </header>
 
-<main>
+<main id="main" class="doc">
   <h1>확률 정보</h1>
 
   <p>「이세계 히어로」(이하 "게임")의 확률 정보입니다.</p>
@@ -148,9 +155,15 @@
   </div>
 </main>
 
-<footer>
-  <p><a href="index.html">소개</a> &middot; <a href="privacy.html">개인정보처리방침</a> &middot; <a href="probability.html">확률 정보</a></p>
-  <p>&copy; Dongry Games &middot; 문의 <a href="mailto:whitesulhee@gmail.com">whitesulhee@gmail.com</a></p>
+<footer class="site-footer">
+  <div class="site-footer__in">
+    <p class="site-footer__links">
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="probability.html">확률 정보</a>
+      <a href="mailto:whitesulhee@gmail.com">whitesulhee@gmail.com</a>
+    </p>
+    <p class="site-footer__copy">&copy; Dongry Games &middot; 이 사이트는 쿠키나 분석 도구를 쓰지 않습니다.</p>
+  </div>
 </footer>
 </body>
 </html>
