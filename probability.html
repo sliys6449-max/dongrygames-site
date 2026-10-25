@@ -8,10 +8,11 @@
 <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0912" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="site-header">
   <div class="site-header__in">
@@ -20,12 +21,25 @@
       <a href="index.html" data-nav="game">이세계 히어로</a>
       <a href="privacy.html" data-nav="policy">방침</a>
       <a href="mailto:whitesulhee@gmail.com">문의</a>
+      <a class="nav-get" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener" aria-label="Google Play에서 받기">받기</a>
     </nav>
   </div>
 </header>
 
 <main id="main" class="doc">
   <h1>확률 정보</h1>
+
+  <details class="toc" open>
+    <summary>목차</summary>
+    <ol>
+      <li><a href="#sec-1">0. 한눈에 보기</a></li>
+      <li><a href="#sec-2">1. 장비 강화 (확률형)</a></li>
+      <li><a href="#sec-3">2. 장비 합성 (확률 없음)</a></li>
+      <li><a href="#sec-4">3. 응원 상자 (&#8361;1,100, 확률 없음)</a></li>
+      <li><a href="#sec-5">4. 유료 뽑기와 그 밖에 확률이 없는 것</a></li>
+      <li><a href="#sec-6">5. 변경 이력</a></li>
+    </ol>
+  </details>
 
   <p>「이세계 히어로」(이하 "게임")의 확률 정보입니다.</p>
   <ul>
@@ -34,54 +48,54 @@
     <li>문의: <a href="mailto:whitesulhee@gmail.com">whitesulhee@gmail.com</a></li>
   </ul>
 
-  <h2>0. 한눈에 보기</h2>
+  <h2 id="sec-1">0. 한눈에 보기</h2>
   <div class="table-wrap">
-  <table>
+  <table role="table">
     <thead>
-      <tr><th>항목</th><th>확률이 있나</th><th>어디에 쓰나</th><th>아래 절</th></tr>
+      <tr role="row"><th role="columnheader">항목</th><th role="columnheader">확률이 있나</th><th role="columnheader">어디에 쓰나</th><th role="columnheader">아래 절</th></tr>
     </thead>
     <tbody>
-      <tr><td>장비 강화</td><td><strong>있음</strong> (성공 확률 + 천장)</td><td>골드로만</td><td>1</td></tr>
-      <tr><td>장비 합성</td><td>없음 (같은 장비 2개 &rarr; 다음 등급, 항상 성공)</td><td>골드</td><td>2</td></tr>
-      <tr><td>응원 상자 (&#8361;1,100)</td><td>없음 (내용물이 늘 같음)</td><td>결제 상품</td><td>3</td></tr>
-      <tr><td>유료 뽑기</td><td><strong>없음</strong> (게임에 팔지 않음)</td><td>&mdash;</td><td>4</td></tr>
-      <tr><td>그 밖</td><td>장비 획득&middot;이벤트 무대 보상 등은 정해져 있음</td><td>&mdash;</td><td>4</td></tr>
+      <tr role="row"><td data-label="항목" role="cell">장비 강화</td><td data-label="확률이 있나" role="cell"><strong>있음</strong> (성공 확률 + 천장)</td><td data-label="어디에 쓰나" role="cell">골드로만</td><td data-label="아래 절" role="cell">1</td></tr>
+      <tr role="row"><td data-label="항목" role="cell">장비 합성</td><td data-label="확률이 있나" role="cell">없음 (같은 장비 2개 &rarr; 다음 등급, 항상 성공)</td><td data-label="어디에 쓰나" role="cell">골드</td><td data-label="아래 절" role="cell">2</td></tr>
+      <tr role="row"><td data-label="항목" role="cell">응원 상자 (&#8361;1,100)</td><td data-label="확률이 있나" role="cell">없음 (내용물이 늘 같음)</td><td data-label="어디에 쓰나" role="cell">결제 상품</td><td data-label="아래 절" role="cell">3</td></tr>
+      <tr role="row"><td data-label="항목" role="cell">유료 뽑기</td><td data-label="확률이 있나" role="cell"><strong>없음</strong> (게임에 팔지 않음)</td><td data-label="어디에 쓰나" role="cell">&mdash;</td><td data-label="아래 절" role="cell">4</td></tr>
+      <tr role="row"><td data-label="항목" role="cell">그 밖</td><td data-label="확률이 있나" role="cell">장비 획득&middot;이벤트 무대 보상 등은 정해져 있음</td><td data-label="어디에 쓰나" role="cell">&mdash;</td><td data-label="아래 절" role="cell">4</td></tr>
     </tbody>
   </table>
   </div>
   <p>결제&middot;광고&middot;VIP&middot;크리스탈은 위 어느 확률도 바꾸지 않습니다.</p>
 
-  <h2>1. 장비 강화 (확률형)</h2>
+  <h2 id="sec-2">1. 장비 강화 (확률형)</h2>
   <p>확률형 아이템(장비 강화)이 포함되어 있습니다.</p>
   <p>게임 안 [확률 정보] 화면과 같은 내용입니다. 표의 값은 게임이 실제로 판정에 쓰는 값입니다.</p>
 
   <h3>강화 표 (목표 단계마다 한 줄)</h3>
   <div class="table-wrap">
-  <table>
+  <table role="table">
     <thead>
-      <tr><th>목표</th><th>성공 확률</th><th>천장</th><th>한 번 비용(골드)</th><th>오르는 능력치</th></tr>
+      <tr role="row"><th role="columnheader">목표</th><th role="columnheader">성공 확률</th><th role="columnheader">천장</th><th role="columnheader">한 번 비용(골드)</th><th role="columnheader">오르는 능력치</th></tr>
     </thead>
     <tbody>
-      <tr><td>+1</td><td>100%</td><td>1번째</td><td>100 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+2</td><td>95%</td><td>2번째</td><td>140 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+3</td><td>90%</td><td>2번째</td><td>180 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+4</td><td>85%</td><td>3번째</td><td>250 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+5</td><td>80%</td><td>3번째</td><td>330 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+6</td><td>75%</td><td>4번째</td><td>450 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+7</td><td>70%</td><td>4번째</td><td>610 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+8</td><td>65%</td><td>5번째</td><td>820 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+9</td><td>60%</td><td>5번째</td><td>1,100 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+10</td><td>60%</td><td>5번째</td><td>1,490 &times; 세트 등급</td><td>+4%</td></tr>
-      <tr><td>+11</td><td>50%</td><td>6번째</td><td>2,010 &times; 세트 등급</td><td>+8%</td></tr>
-      <tr><td>+12</td><td>45%</td><td>7번째</td><td>2,710 &times; 세트 등급</td><td>+8%</td></tr>
-      <tr><td>+13</td><td>40%</td><td>7번째</td><td>3,660 &times; 세트 등급</td><td>+8%</td></tr>
-      <tr><td>+14</td><td>35%</td><td>8번째</td><td>4,950 &times; 세트 등급</td><td>+8%</td></tr>
-      <tr><td>+15</td><td>30%</td><td>8번째</td><td>6,680 &times; 세트 등급</td><td>+8%</td></tr>
-      <tr><td>+16</td><td>25%</td><td>9번째</td><td>5,000 &times; 세트 등급</td><td>+10%</td></tr>
-      <tr><td>+17</td><td>20%</td><td>9번째</td><td>5,000 &times; 세트 등급</td><td>+10%</td></tr>
-      <tr><td>+18</td><td>15%</td><td>10번째</td><td>5,000 &times; 세트 등급</td><td>+10%</td></tr>
-      <tr><td>+19</td><td>12%</td><td>10번째</td><td>5,000 &times; 세트 등급</td><td>+10%</td></tr>
-      <tr><td>+20</td><td>10%</td><td>10번째</td><td>5,000 &times; 세트 등급</td><td>+10%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+1</td><td data-label="성공 확률" role="cell">100%</td><td data-label="천장" role="cell">1번째</td><td data-label="한 번 비용(골드)" role="cell">100 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+2</td><td data-label="성공 확률" role="cell">95%</td><td data-label="천장" role="cell">2번째</td><td data-label="한 번 비용(골드)" role="cell">140 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+3</td><td data-label="성공 확률" role="cell">90%</td><td data-label="천장" role="cell">2번째</td><td data-label="한 번 비용(골드)" role="cell">180 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+4</td><td data-label="성공 확률" role="cell">85%</td><td data-label="천장" role="cell">3번째</td><td data-label="한 번 비용(골드)" role="cell">250 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+5</td><td data-label="성공 확률" role="cell">80%</td><td data-label="천장" role="cell">3번째</td><td data-label="한 번 비용(골드)" role="cell">330 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+6</td><td data-label="성공 확률" role="cell">75%</td><td data-label="천장" role="cell">4번째</td><td data-label="한 번 비용(골드)" role="cell">450 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+7</td><td data-label="성공 확률" role="cell">70%</td><td data-label="천장" role="cell">4번째</td><td data-label="한 번 비용(골드)" role="cell">610 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+8</td><td data-label="성공 확률" role="cell">65%</td><td data-label="천장" role="cell">5번째</td><td data-label="한 번 비용(골드)" role="cell">820 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+9</td><td data-label="성공 확률" role="cell">60%</td><td data-label="천장" role="cell">5번째</td><td data-label="한 번 비용(골드)" role="cell">1,100 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+10</td><td data-label="성공 확률" role="cell">60%</td><td data-label="천장" role="cell">5번째</td><td data-label="한 번 비용(골드)" role="cell">1,490 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+4%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+11</td><td data-label="성공 확률" role="cell">50%</td><td data-label="천장" role="cell">6번째</td><td data-label="한 번 비용(골드)" role="cell">2,010 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+8%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+12</td><td data-label="성공 확률" role="cell">45%</td><td data-label="천장" role="cell">7번째</td><td data-label="한 번 비용(골드)" role="cell">2,710 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+8%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+13</td><td data-label="성공 확률" role="cell">40%</td><td data-label="천장" role="cell">7번째</td><td data-label="한 번 비용(골드)" role="cell">3,660 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+8%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+14</td><td data-label="성공 확률" role="cell">35%</td><td data-label="천장" role="cell">8번째</td><td data-label="한 번 비용(골드)" role="cell">4,950 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+8%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+15</td><td data-label="성공 확률" role="cell">30%</td><td data-label="천장" role="cell">8번째</td><td data-label="한 번 비용(골드)" role="cell">6,680 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+8%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+16</td><td data-label="성공 확률" role="cell">25%</td><td data-label="천장" role="cell">9번째</td><td data-label="한 번 비용(골드)" role="cell">5,000 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+10%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+17</td><td data-label="성공 확률" role="cell">20%</td><td data-label="천장" role="cell">9번째</td><td data-label="한 번 비용(골드)" role="cell">5,000 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+10%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+18</td><td data-label="성공 확률" role="cell">15%</td><td data-label="천장" role="cell">10번째</td><td data-label="한 번 비용(골드)" role="cell">5,000 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+10%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+19</td><td data-label="성공 확률" role="cell">12%</td><td data-label="천장" role="cell">10번째</td><td data-label="한 번 비용(골드)" role="cell">5,000 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+10%</td></tr>
+      <tr role="row"><td data-label="목표" role="cell">+20</td><td data-label="성공 확률" role="cell">10%</td><td data-label="천장" role="cell">10번째</td><td data-label="한 번 비용(골드)" role="cell">5,000 &times; 세트 등급</td><td data-label="오르는 능력치" role="cell">+10%</td></tr>
     </tbody>
   </table>
   </div>
@@ -120,7 +134,7 @@
     <li>바꾸기 전에 게임 안 새 소식과 홈페이지에 알려요. 지난 값은 변경 이력에 남겨 둬요.</li>
   </ul>
 
-  <h2>2. 장비 합성 (확률 없음)</h2>
+  <h2 id="sec-3">2. 장비 합성 (확률 없음)</h2>
   <ul>
     <li>같은 장비 2개를 합치면 다음 등급 1개가 됩니다(일반 &rarr; 레어 &rarr; 에픽 &rarr; 유니크 &rarr; 전설). <strong>항상 성공하며 확률이 없어요.</strong></li>
     <li>필요한 골드: 일반&rarr;레어 600, 레어&rarr;에픽 1,800, 에픽&rarr;유니크 6,000, 유니크&rarr;전설 12,000 에 세트 등급을 곱한 값입니다.</li>
@@ -128,13 +142,13 @@
     <li>이 세이브의 첫 합성 1번은 무료예요(일반 &rarr; 레어, 1막 세트만).</li>
   </ul>
 
-  <h2>3. 응원 상자 (&#8361;1,100, 확률 없음)</h2>
+  <h2 id="sec-4">3. 응원 상자 (&#8361;1,100, 확률 없음)</h2>
   <ul>
     <li>골드 10,000 &middot; 크리스탈 200 &middot; 응원봉 20 &middot; 장비 선택권 2가 늘 같이 들어 있어요. 하루 1번 살 수 있어요.</li>
     <li>내용물이 고정이라 확률이 없어요.</li>
   </ul>
 
-  <h2>4. 유료 뽑기와 그 밖에 확률이 없는 것</h2>
+  <h2 id="sec-5">4. 유료 뽑기와 그 밖에 확률이 없는 것</h2>
   <ul>
     <li><strong>유료 뽑기는 없어요.</strong> 게임에 유료로 무작위 아이템을 뽑는 상품이 없습니다. 상점 상품은 광고 제거&middot;VIP&middot;투어 패스&middot;응원 상자 4개뿐이고 모두 내용물이 정해져 있습니다. 크리스탈 팩과 크리스탈로 옷 사기는 꺼져 있습니다.</li>
     <li><strong>장비 획득</strong>: 판을 처음 깰 때 받는 장비는 정해져 있어요(확률 없음). 이미 깬 챕터의 판을 다시 하면 3판마다 정해진 순서로 장비 1장(챕터당 최대 5장)을 받아요(확률 없음).</li>
@@ -142,14 +156,14 @@
     <li><strong>레벨업 카드</strong>: 판 안에서 레벨업마다 나오는 카드 3장은 판마다 무작위로 나오고, [다시 뽑기]는 판마다 무료 1번이에요. 카드는 판이 끝나면 사라지는 판 안 강화이며 결제&middot;광고&middot;VIP&middot;크리스탈과 연결되지 않아요.</li>
   </ul>
 
-  <h2>5. 변경 이력</h2>
+  <h2 id="sec-6">5. 변경 이력</h2>
   <div class="table-wrap">
-  <table>
+  <table role="table">
     <thead>
-      <tr><th>적용일</th><th>버전</th><th>바뀐 내용</th></tr>
+      <tr role="row"><th role="columnheader">적용일</th><th role="columnheader">버전</th><th role="columnheader">바뀐 내용</th></tr>
     </thead>
     <tbody>
-      <tr><td>2026-10-25</td><td>1.0.0</td><td>최초 게시 (장비 강화 표 &middot; 천장)</td></tr>
+      <tr role="row"><td data-label="적용일" role="cell">2026-10-25</td><td data-label="버전" role="cell">1.0.0</td><td data-label="바뀐 내용" role="cell">최초 게시 (장비 강화 표 &middot; 천장)</td></tr>
     </tbody>
   </table>
   </div>
@@ -165,5 +179,6 @@
     <p class="site-footer__copy">&copy; Dongry Games &middot; 이 사이트는 쿠키나 분석 도구를 쓰지 않습니다.</p>
   </div>
 </footer>
+<a class="totop" href="#top">맨 위로</a>
 </body>
 </html>

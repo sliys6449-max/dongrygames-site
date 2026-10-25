@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>이세계 히어로 - 망돌이였던 내가 이세계에선 히어로? | Dongry Games</title>
-<meta name="description" content="한 손으로, 한 판 3분. 귀여운 도트 마법소녀와 함께하는 모바일 뱀서라이크 「이세계 히어로」. 30개 챕터 300 스테이지, 웹툰 이야기, 함께하는 동료들. Google Play에서 받으세요.">
+<title>이세계 히어로 | 한 손 마법소녀 뱀서라이크 - Dongry Games</title>
+<meta name="description" content="귀여운 도트 마법소녀와 함께하는 한 손 뱀서라이크. 3분 정도면 한 판, 30개 챕터 300 스테이지, 유료 뽑기 없음. Google Play에서 받으세요.">
 <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0912" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://dongrygames.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Dongry Games">
-<meta property="og:title" content="이세계 히어로 - 망돌이였던 내가 이세계에선 히어로?">
-<meta property="og:description" content="한 손으로, 한 판 3분. 귀여운 도트 마법소녀와 함께하는 모바일 뱀서라이크.">
+<meta property="og:title" content="이세계 히어로 | 한 손 마법소녀 뱀서라이크">
+<meta property="og:description" content="망돌이였던 내가 이세계에선 히어로? 3분 정도면 한 판, 귀여운 도트 마법소녀 뱀서라이크.">
 <meta property="og:url" content="https://dongrygames.com/">
 <meta property="og:image" content="https://dongrygames.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="이세계 히어로 - 망돌이였던 내가 이세계에선 히어로?">
+<meta property="og:image:alt" content="이세계 히어로 - 망돌이였던 내가 이세계에선 히어로? 한 손으로, 3분 정도면 한 판.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/game.css">
@@ -42,7 +43,7 @@
 })();
 </script>
 </head>
-<body>
+<body id="top">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="site-header">
   <div class="site-header__in">
@@ -51,6 +52,7 @@
       <a href="index.html" data-nav="game" aria-current="page">이세계 히어로</a>
       <a href="privacy.html" data-nav="policy">방침</a>
       <a href="mailto:whitesulhee@gmail.com">문의</a>
+      <a class="nav-get" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener" aria-label="Google Play에서 받기">받기</a>
     </nav>
   </div>
 </header>
@@ -62,24 +64,39 @@
     <img class="hero__icon" src="assets/img/app-icon.png" width="256" height="256" alt="이세계 히어로 앱 아이콘">
     <p class="eyebrow">이세계 히어로</p>
     <h1 class="display" id="hero-title">망돌이였던 내가<br>이세계에선 히어로?</h1>
-    <p class="lead">한 손으로, 한 판 3분.<br>귀여운 도트 마법소녀와 함께하는 뱀서라이크.</p>
+    <p class="lead">한 손으로, 3분 정도면 한 판.<br>귀여운 도트 마법소녀와 함께하는 뱀서라이크.</p>
     <p class="cta">
       <a class="pill" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener">Google Play에서 받기</a>
       <a class="textlink" href="#play">더 알아보기 &rsaquo;</a>
     </p>
-    <p class="note">Android용 &middot; 기본 플레이 무료</p>
+    <p class="note">Android용&nbsp;&middot; 기본 플레이 무료&nbsp;&middot; 광고와 인앱 구매가 있어요</p>
+    <p class="note">만 16세 이상 이용자 대상</p>
     <div class="stage">
       <img class="pixel" src="assets/img/sprites/seolhee.png" width="110" height="126" alt="주인공 설희의 도트 그림. 검은 머리에 빨간 리본을 단 교복 차림으로 서 있어요.">
     </div>
   </section>
 
-  <!-- 2. 한 손으로, 한 판 3분 -->
+  <!-- 1-2. 게임 화면 (히어로 바로 아래) -->
+  <section class="screens" id="screens" aria-labelledby="screens-title">
+    <div class="wrap center reveal">
+      <p class="eyebrow">게임 화면</p>
+      <h2 class="h2" id="screens-title">실제 게임 화면이에요.</h2>
+    </div>
+    <!-- INTRO_VIDEO: 영상 담당의 site_embed_snippet.html 이 들어올 자리. 영상이 오면 이 줄을 그 내용으로 바꿉니다(README_v2.md 참고). 스타일은 game.css 의 .intro-video 에 준비돼 있습니다. -->
+    <div class="shots reveal" role="region" aria-label="게임 화면 (옆으로 넘겨 보세요)" tabindex="0">
+      <figure class="shot"><img src="assets/img/screens/levelup.webp" width="540" height="960" loading="lazy" decoding="async" alt="게임 화면: 레벨업 때 나오는 카드 3장 중 하나를 고르는 모습이에요."></figure>
+      <figure class="shot"><img src="assets/img/screens/evolve.webp" width="540" height="960" loading="lazy" decoding="async" alt="게임 화면: 무기와 짝이 맞는 패시브가 만나 왕 발도장으로 진화하는 컷인이에요."></figure>
+      <figure class="shot"><img src="assets/img/screens/boss.webp" width="540" height="960" loading="lazy" decoding="async" alt="게임 화면: 챕터 끝 보스 무대에서 눈덩이 설인과 싸우는 모습이에요."></figure>
+    </div>
+  </section>
+
+  <!-- 2. 쉬는 시간에 한 판 -->
   <section class="section" id="play" aria-labelledby="play-title">
     <div class="wrap">
       <div class="center reveal">
         <p class="eyebrow">플레이</p>
-        <h2 class="h2" id="play-title">한 손으로,<br>한 판 3분.</h2>
-        <p class="lead">쉬는 시간에 한 판, 자기 전에 한 판.</p>
+        <h2 class="h2" id="play-title">쉬는 시간에 한 판,<br>자기 전에 한 판.</h2>
+        <p class="lead">3분 정도면 한 판, 짬짬이 즐기기 좋아요.</p>
       </div>
       <div class="features">
         <article class="fcard reveal">
@@ -95,13 +112,13 @@
         <article class="fcard reveal">
           <p class="fcard__k">무기 &middot; 패시브 &middot; 진화</p>
           <p class="fcard__big grad-text" aria-hidden="true">8 &middot; 8 &middot; 8</p>
-          <h3>무기 8종, 패시브 8종, 진화 8종.</h3>
+          <h3>무기 8종, 패시브 8종,<br>진화 8종.</h3>
           <p>무기와 짝이 맞는 패시브를 모으면 진화해요.</p>
         </article>
         <article class="fcard reveal">
           <p class="fcard__k">한 판의 길이</p>
-          <p class="fcard__big grad-text" aria-hidden="true">3분</p>
-          <h3>3분 정도면 한 판.</h3>
+          <p class="fcard__big grad-text" aria-hidden="true">3분 정도</p>
+          <h3>짬짬이 즐기는 한 판.</h3>
           <p>길어도 5분쯤이에요. 보스 무대는 보스를 쓰러뜨릴 때까지 이어져요.</p>
         </article>
       </div>
@@ -143,12 +160,13 @@
   </section>
 
   <!-- 4. 함께하는 동료들 -->
-  <section class="section crew" aria-labelledby="crew-title" style="padding-bottom: 0;">
+  <section class="section section--tight-bottom crew" aria-labelledby="crew-title">
     <div class="wrap crew-head center reveal">
       <p class="eyebrow">동료</p>
       <h2 class="h2" id="crew-title">함께하는 동료들.</h2>
-      <p class="lead">챕터 5 &middot; 10 &middot; 15 &middot; 20 &middot; 25 &middot; 30의 결전을 깨면 새 동료가 합류해요. 고른 동료로 새 무대에도 도전할 수 있어요.</p>
+      <p class="lead">이야기를 진행하면 새 동료가 합류해요. 고른 동료로 새 무대에도 도전할 수 있어요.</p>
     </div>
+    <div class="rail-wrap">
     <div class="rail reveal" role="region" aria-label="동료 카드 (옆으로 넘겨 보세요)" tabindex="0">
       <article class="ccard" style="--c:#5ED6D0">
         <div class="ccard__art"><img class="pixel s3" src="assets/img/sprites/nabi.png" width="96" height="96" alt="고양이 매니저 나비의 도트 그림. 안경을 쓴 흰 고양이가 클립보드를 들고 있어요."></div>
@@ -156,42 +174,51 @@
       </article>
       <article class="ccard" style="--c:#E8913A">
         <div class="ccard__art"><img class="pixel s3" src="assets/img/sprites/tori.png" width="96" height="96" alt="토리의 도트 그림. 도토리 모자를 쓴 요정이 응원봉을 들고 있어요."></div>
-        <div class="ccard__body"><p class="ccard__tag">챕터 2 &middot; 속삭임의 숲</p><h3>토리</h3><p>설희의 팬 1호 요정이에요. 1-5를 깨면 나비와 함께 도움 필살기로 힘을 보태요.</p></div>
+        <div class="ccard__body"><p class="ccard__tag">챕터 2 합류</p><h3>토리</h3><p>설희의 팬 1호 요정이에요. 1-5를 깬 뒤 나비와 함께 도움 필살기로 힘을 보태요.</p></div>
       </article>
       <article class="ccard" style="--c:#FFE45C">
         <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/cindy.png" width="110" height="126" alt="신디의 도트 그림. 웨이브 긴 머리에 붉은 넥타이 교복 차림이에요."></div>
-        <div class="ccard__body"><p class="ccard__tag">5장 결전 뒤 합류</p><h3>신디</h3><p>혼자 박자를 세는 버릇이 있어요.</p></div>
+        <div class="ccard__body"><h3>신디</h3><p>혼자 박자를 세는 버릇이 있어요.</p></div>
       </article>
       <article class="ccard" style="--c:#8FA8FF">
         <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/luru.png" width="110" height="126" alt="루루의 도트 그림. 별무늬 수면 모자를 쓰고 베개를 안고 있어요."></div>
-        <div class="ccard__body"><p class="ccard__tag">10장 결전 뒤 합류</p><h3>루루</h3><p>짧고 정중하게 말해요. 안경을 한 번 고쳐 쓰는 버릇이 있어요.</p></div>
+        <div class="ccard__body"><h3>루루</h3><p>짧고 정중하게 말해요.</p></div>
       </article>
       <article class="ccard" style="--c:#A8D86E">
         <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/juhee.png" width="110" height="126" alt="주희의 도트 그림. 베레모와 안경, 체크 원피스 차림이에요."></div>
-        <div class="ccard__body"><p class="ccard__tag">15장 결전 뒤 합류</p><h3>주희</h3><p>조용히 그림을 그리는 친구예요. 말끝을 흐려요.</p></div>
+        <div class="ccard__body"><h3>주희</h3><p>조용히 그림을 그리는 친구예요. 말끝을 흐려요.</p></div>
       </article>
       <article class="ccard" style="--c:#C8742B">
         <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/dodam.png" width="110" height="126" alt="햇살의 도트 그림. 크림색 포니테일에 별무늬 검은 망토 차림이에요."></div>
-        <div class="ccard__body"><p class="ccard__tag">20장 결전 뒤 합류</p><h3>햇살</h3><p>무뚝뚝하지만 책임감 있는 조명 감독이에요. &ldquo;조명은 꺼지면 안 돼요.&rdquo;</p></div>
+        <div class="ccard__body"><h3>햇살</h3><p>무뚝뚝하지만 책임감 있는 조명 감독이에요. &ldquo;조명은 꺼지면 안 돼요.&rdquo;</p></div>
       </article>
       <article class="ccard" style="--c:#FF8A8A">
         <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/miru.png" width="110" height="126" alt="아리의 도트 그림. 연보라 원피스에 연갈색 웨이브 머리, 리본을 달고 있어요."></div>
-        <div class="ccard__body"><p class="ccard__tag">25장 결전 뒤 합류</p><h3>아리</h3><p>밝고 시끄러운 별빛 축제 MC예요. 남 칭찬이 특기예요.</p></div>
+        <div class="ccard__body"><h3>아리</h3><p>밝고 시끄러운 별빛 축제 MC예요. 남 칭찬이 특기예요.</p></div>
       </article>
       <article class="ccard" style="--c:#F2E3A8">
-        <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/sera.png" width="110" height="126" alt="세라의 도트 그림. 머리 위에 금빛 고리, 은발 땋은 머리에 금방울을 달고 있어요."></div>
-        <div class="ccard__body"><p class="ccard__tag">30장 결전 뒤 합류</p><h3>세라</h3><p>차분하고 다정한 존댓말을 써요.</p></div>
+        <div class="ccard__art"><img class="pixel s2" src="assets/img/sprites/sera.png" width="110" height="126" alt="세라의 도트 그림. 머리 위에 금빛 고리를 단 은발 땋은 머리 차림이에요."></div>
+        <div class="ccard__body"><h3>세라</h3><p>차분하고 다정한 존댓말을 써요.</p></div>
       </article>
+    </div>
+    <p class="rail-hint" aria-hidden="true">옆으로 넘겨 보세요 &rsaquo;</p>
     </div>
   </section>
 
+  <!-- 4-2. 중간 설치 버튼 -->
+  <section class="midcta" aria-label="설치">
+    <a class="pill" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener">Google Play에서 받기</a>
+    <p class="note">Android용&nbsp;&middot; 기본 플레이 무료&nbsp;&middot; 광고와 인앱 구매가 있어요</p>
+  </section>
+
   <!-- 5. 웹툰과 갤러리 -->
-  <section class="section" aria-labelledby="web-title" style="padding-top: clamp(40px, 6vw, 80px);">
+  <section class="section section--tight-top" aria-labelledby="web-title">
     <div class="wrap">
       <div class="center reveal">
         <p class="eyebrow">이야기</p>
-        <h2 class="h2" id="web-title">읽고,<br>모으는 이야기.</h2>
+        <h2 class="h2" id="web-title">웹툰은 읽고,<br>그림은 모아요.</h2>
       </div>
+      <p class="story reveal">데뷔 10년 차, 쇼케이스 관객은 세&nbsp;명. 망한 아이돌(망돌) 설희가 어느 날 이세계 &ldquo;별빛 학원&rdquo;에 소환됐어요. 고양이 매니저 나비와 함께, 몰려오는 마물을 정화하고 잃어버린 응원을 되찾아 주세요!</p>
       <div class="webtoon">
         <div class="reveal">
           <h3>세로로 쭉 내려 읽는 웹툰.</h3>
@@ -210,17 +237,17 @@
       </div>
 
       <div class="center gallery-head reveal">
-        <h3 class="h2" style="font-size: clamp(30px, 5vw, 52px);">갤러리에<br>기념 그림이 모여요.</h3>
+        <h3>갤러리에<br>기념 그림이 모여요.</h3>
       </div>
       <div class="gallery reveal" role="region" aria-label="갤러리 기념 그림 (옆으로 넘겨 보세요)" tabindex="0">
-        <figure class="gcard"><img src="assets/img/gallery/k1_prologue.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 어두운 무대 위 한 줄기 조명 아래 설희가 마이크를 들고 서 있어요."><figcaption>프롤로그</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c01_academy.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 노을 진 학원 정원에서 설희가 나비와 함께 웃고 있어요."><figcaption>챕터 1 &middot; 학원 정원</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c02_forest.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 속삭임의 숲에서 설희와 토리, 나비가 버섯 사이에 모여 있어요."><figcaption>챕터 2 &middot; 속삭임의 숲</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c03_swamp.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 말랑 젤리 늪의 나무 부두에서 설희가 커다란 초록 슬라임을 바라봐요."><figcaption>챕터 3 &middot; 말랑 젤리 늪</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c04_desert.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 등불이 켜진 사막 시장에서 설희가 두 팔을 번쩍 들고 환하게 웃어요."><figcaption>챕터 4 &middot; 모래시계 사막 시장</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c05_snow.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 눈꽃이 흩날리는 설산 마을에서 설희와 친구들이 커다란 눈덩이 설인과 함께 있어요."><figcaption>챕터 5 &middot; 눈꽃 설산 마을</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c07_port.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 해적 항구의 배 위에서 설희가 두 팔을 벌리고 환호하고 있어요."><figcaption>챕터 7 &middot; 해적 항구</figcaption></figure>
-        <figure class="gcard"><img src="assets/img/gallery/c08_clocktower.webp" width="720" height="1280" loading="lazy" alt="갤러리 그림: 커다란 시계탑이 보이는 태엽 도시 광장에 설희와 친구들이 나란히 서 있어요."><figcaption>챕터 8 &middot; 태엽 시계탑 도시</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/k1_prologue.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 어두운 무대 위 한 줄기 조명 아래 설희가 마이크를 들고 서 있어요."><figcaption>프롤로그</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c01_academy.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 노을 진 학원 정원에서 설희가 나비와 함께 웃고 있어요."><figcaption>챕터 1 &middot; 학원 정원</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c02_forest.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 속삭임의 숲에서 설희와 토리, 나비가 버섯 사이에 모여 있어요."><figcaption>챕터 2 &middot; 속삭임의 숲</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c03_swamp.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 말랑 젤리 늪의 나무 부두에서 설희가 커다란 초록 슬라임을 바라봐요."><figcaption>챕터 3 &middot; 말랑 젤리 늪</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c04_desert.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 등불이 켜진 사막 시장에서 설희가 두 팔을 번쩍 들고 환하게 웃어요."><figcaption>챕터 4 &middot; 모래시계 사막 시장</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c05_snow.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 눈꽃이 흩날리는 설산 마을에서 설희와 친구들이 커다란 눈덩이 설인과 함께 있어요."><figcaption>챕터 5 &middot; 눈꽃 설산 마을</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c06_mine.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 반짝 광산 동굴의 따뜻한 물가에서 설희와 친구들이 나비와 함께 쉬고 있어요."><figcaption>챕터 6 &middot; 반짝 광산 동굴</figcaption></figure>
+        <figure class="gcard"><img src="assets/img/gallery/c07_port.webp" width="464" height="825" loading="lazy" decoding="async" alt="갤러리 그림: 해적 항구의 배 위에서 설희가 두 팔을 벌리고 환호하고 있어요."><figcaption>챕터 7 &middot; 해적 항구</figcaption></figure>
       </div>
     </div>
   </section>
@@ -229,9 +256,10 @@
   <section class="final" aria-labelledby="final-title">
     <div class="final__card reveal">
       <h2 id="final-title">지금 무대에<br>올라 보세요.</h2>
-      <p>한 손이면 충분해요. 3분 뒤, 첫 무대가 끝나 있을 거예요.</p>
+      <p>한 손이면 충분해요. 지금 첫 무대를 열어 보세요.</p>
       <a class="pill" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener">Google Play에서 받기</a>
-      <p class="small">Android용 &middot; 기본 플레이 무료(인앱 구매 있음) &middot; 만 16세 이상 이용자 대상</p>
+      <p class="small">Android용&nbsp;&middot; 기본 플레이 무료&nbsp;&middot; 광고와 인앱 구매가 있어요&nbsp;&middot; 만 16세 이상 이용자 대상</p>
+      <p class="small">장비 강화에만 확률이 있어요. <a href="probability.html">확률 정보</a>에서 볼 수 있어요.</p>
     </div>
   </section>
 

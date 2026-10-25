@@ -1,9 +1,13 @@
 /* 「이세계 히어로」 긴 소개 페이지 전용 스타일. 공통 스타일은 site.css.
    나중에 게임이 늘면 이 파일과 index.html 을 isekai-hero/ 로 옮깁니다(README_v2.md 참고). */
 
+:root { --sec-y: clamp(72px, 10vw, 128px); --sec-y-sm: clamp(40px, 6vw, 80px); }
 .pixel { image-rendering: crisp-edges; image-rendering: pixelated; }
+h1, h2, h3, .lead, .sub { text-wrap: balance; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-.section { padding: clamp(72px, 10vw, 128px) 0; position: relative; }
+.section { padding: var(--sec-y) 0; position: relative; }
+.section--tight-bottom { padding-bottom: 0; }
+.section--tight-top { padding-top: var(--sec-y-sm); }
 .eyebrow { margin: 0 0 14px; font-size: 15px; font-weight: 700; letter-spacing: 0.02em; color: var(--link); }
 .display {
   margin: 0; font-size: clamp(40px, 9.6vw, 88px); line-height: 1.12; letter-spacing: -0.025em; font-weight: 800;
@@ -16,7 +20,7 @@
 /* 1. 히어로 */
 .hero {
   position: relative; overflow: hidden; text-align: center;
-  padding: calc(var(--nav-h) + 56px) 16px 120px;
+  padding: calc(var(--nav-h) + 56px) 16px clamp(56px, 8vw, 96px);
 }
 .hero::before {
   content: ""; position: absolute; left: 50%; top: 18%; width: min(1100px, 150vw); aspect-ratio: 1; transform: translateX(-50%);
@@ -28,7 +32,8 @@
 .hero > * { position: relative; }
 .hero__icon { width: 104px; height: 104px; border-radius: 24px; box-shadow: var(--shadow); margin: 0 auto 22px; display: block; }
 .hero .cta { display: flex; flex-direction: column; align-items: center; gap: 16px; margin: 34px 0 0; }
-.hero .note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.hero .note { margin: 14px auto 0; max-width: 520px; font-size: 14px; line-height: 1.6; color: var(--muted); text-wrap: balance; }
+.hero .note + .note { margin-top: 2px; }
 .stage { position: relative; margin: clamp(24px, 5vw, 56px) auto 0; width: 100%; max-width: 640px; }
 .stage::before {
   content: ""; position: absolute; left: 50%; bottom: 0; width: min(560px, 100%); aspect-ratio: 1; transform: translate(-50%, 0);
@@ -40,13 +45,32 @@
 }
 .stage img { position: relative; z-index: 1; display: block; margin: 0 auto; width: 330px; height: auto; max-width: none; }
 @media (min-width: 720px) { .stage img { width: 440px; } }
+@media (max-width: 340px) { .stage img { width: 220px; } }
+@media (prefers-color-scheme: dark) { .stage::before { opacity: 0.32; filter: blur(60px); } }
+
+/* 게임 화면 (히어로 바로 아래) */
+.screens { padding: var(--sec-y-sm) 0 var(--sec-y-sm); }
+.screens .h2 { font-size: clamp(28px, 4.6vw, 48px); }
+.intro-video { margin: 0 auto 28px; max-width: 360px; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); background: var(--card); border: 1px solid var(--line); }
+.intro-video video, .intro-video iframe { display: block; width: 100%; aspect-ratio: 9 / 16; border: 0; }
+.shots {
+  display: flex; gap: 14px; margin: clamp(28px, 5vw, 48px) 0 0; padding: 8px max(16px, calc((100vw - 1048px) / 2)) 24px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: max(16px, calc((100vw - 1048px) / 2)); scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+}
+.shots figure { flex: 0 0 232px; scroll-snap-align: start; margin: 0; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow); background: var(--card); border: 1px solid var(--line); }
+.shots img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+@media (min-width: 900px) {
+  .shots { justify-content: center; overflow: visible; }
+  .shots figure { flex: 0 1 300px; }
+}
+.screens__note { margin: 4px auto 0; text-align: center; color: var(--muted); font-size: 14px; }
 
 /* 2. 한 손으로, 한 판 3분 */
 .features { display: grid; gap: 16px; margin-top: clamp(40px, 7vw, 72px); grid-template-columns: 1fr; }
 @media (min-width: 760px) { .features { grid-template-columns: 1fr 1fr; gap: 22px; } }
 .fcard {
   position: relative; overflow: hidden; background: var(--card); border-radius: var(--r-lg); box-shadow: var(--shadow);
-  padding: clamp(28px, 4vw, 44px); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(28px, 4vw, 44px); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-start;
   border: 1px solid var(--line);
 }
 .fcard::before {
@@ -55,8 +79,8 @@
 }
 .fcard > * { position: relative; }
 .fcard .fcard__k { margin: 0 0 8px; font-size: 14px; font-weight: 700; color: var(--link); }
-.fcard .fcard__big { margin: 0 0 6px; font-size: clamp(56px, 11vw, 96px); line-height: 1; font-weight: 800; letter-spacing: -0.04em; }
-.fcard h3 { margin: 0 0 10px; font-size: clamp(25px, 3.4vw, 36px); line-height: 1.22; letter-spacing: -0.02em; }
+.fcard .fcard__big { margin: 0 0 6px; white-space: nowrap; font-size: clamp(56px, 11vw, 96px); line-height: 1; font-weight: 800; letter-spacing: -0.04em; }
+.fcard h3 { margin: 0 0 10px; text-wrap: balance; word-break: keep-all; font-size: clamp(25px, 3.4vw, 36px); line-height: 1.22; letter-spacing: -0.02em; }
 .fcard p { margin: 0; color: var(--muted); font-size: 17px; }
 .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 36px 0 0; padding: 0; list-style: none; }
 .chips li {
@@ -69,8 +93,8 @@
 .bignums { display: flex; justify-content: center; align-items: flex-end; flex-wrap: wrap; gap: 8px 32px; margin: 8px 0 0; }
 .bignums div { display: flex; flex-direction: column; align-items: center; line-height: 1; }
 .bignums b { padding-right: 0.08em; font-size: clamp(112px, 30vw, 280px); font-weight: 800; letter-spacing: -0.05em; line-height: 0.95; }
-.bignums span { font-size: clamp(16px, 2.4vw, 22px); font-weight: 700; color: var(--muted); margin-top: 4px; }
-.bignums i { font-style: normal; font-size: clamp(48px, 10vw, 120px); color: var(--muted); padding-bottom: 0.2em; align-self: center; }
+.bignums span { font-size: clamp(16px, 2.4vw, 22px); font-weight: 700; color: var(--muted); margin-top: 10px; }
+.bignums i { font-style: normal; font-size: clamp(32px, 6vw, 64px); color: var(--muted); padding-bottom: 0.2em; align-self: center; }
 .route {
   display: flex; gap: 0; margin: clamp(40px, 7vw, 72px) 0 0; padding: 14px 16px 22px; list-style: none;
   overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: thin;
@@ -85,7 +109,7 @@
 .route li:first-child::after { left: 50%; }
 .route li:last-child::after { right: 50%; }
 .route li.more::before { content: "…"; background: var(--card); color: var(--muted); border: 1px solid var(--line); box-shadow: none; }
-.route span { display: block; font-size: 15px; font-weight: 600; line-height: 1.4; padding: 0 8px; }
+.route span { display: block; text-wrap: balance; font-size: 15px; font-weight: 600; line-height: 1.4; padding: 0 8px; }
 .sub { padding: 0 16px; margin: 28px auto 0; text-align: center; color: var(--muted); max-width: 620px; font-size: 17px; }
 @media (min-width: 1000px) {
   .route { max-width: 1080px; margin-left: auto; margin-right: auto; overflow: visible; }
@@ -95,6 +119,12 @@
 
 /* 4. 동료들 */
 .crew-head { padding-bottom: 8px; }
+.rail-wrap { position: relative; }
+@media (min-width: 1000px) {
+  .rail-wrap::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 110px; pointer-events: none; background: linear-gradient(90deg, transparent, var(--bg)); }
+}
+.rail-hint { display: none; margin: -44px 0 40px; text-align: center; font-size: 14px; color: var(--muted); }
+@media (min-width: 1000px) and (hover: hover) { .rail-hint { display: block; } .rail { scrollbar-width: auto; } }
 .rail {
   display: flex; gap: 18px; overflow-x: auto; padding: 28px max(16px, calc((100vw - 1048px) / 2)) 64px;
   scroll-snap-type: x mandatory; scroll-padding-inline: max(16px, calc((100vw - 1048px) / 2));
@@ -110,31 +140,40 @@
 }
 .ccard__art img { display: block; height: auto; max-width: none; }
 .ccard__art .s2 { width: 220px; }
-.ccard__art .s3 { width: 288px; }
+.ccard__art .s3 { width: 192px; -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); margin-bottom: 40px; }
 .ccard__body { padding: 8px 24px 26px; }
+.ccard__body > h3:first-child { margin-top: 6px; }
 .ccard__tag {
-  display: inline-block; margin: 0 0 8px; padding: 3px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  display: inline-block; margin: 0 0 8px; padding: 3px 12px; border-radius: 999px; font-size: 14px; font-weight: 700;
   background: color-mix(in srgb, var(--c) 28%, transparent); color: var(--fg);
 }
 .ccard h3 { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.02em; }
 .ccard p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 
+/* 동료 뒤 중간 설치 버튼 */
+.midcta { text-align: center; padding: 0 16px var(--sec-y-sm); }
+.midcta .note { margin: 14px auto 0; max-width: 520px; font-size: 14px; color: var(--muted); text-wrap: balance; }
+
 /* 5. 웹툰과 갤러리 */
-.webtoon { display: grid; gap: 28px; align-items: center; margin-top: clamp(40px, 7vw, 72px); }
-@media (min-width: 900px) { .webtoon { grid-template-columns: 1fr 1.15fr; gap: 56px; } }
+.webtoon { display: grid; gap: 28px; align-items: start; margin-top: clamp(40px, 7vw, 72px); }
+@media (min-width: 900px) { .webtoon { grid-template-columns: 1fr 1.15fr; gap: 56px; } .webtoon > div:first-child { position: sticky; top: calc(var(--nav-h) + 32px); } }
 .webtoon h3 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 44px); line-height: 1.2; letter-spacing: -0.025em; }
 .webtoon p { margin: 0; color: var(--muted); font-size: 18px; }
+.story { max-width: 640px; margin: 22px auto 0; text-align: center; font-size: clamp(18px, 2.2vw, 21px); line-height: 1.7; color: var(--muted); text-wrap: balance; }
+.story strong { color: var(--fg); }
+@media (max-width: 899px) { .webtoon h3, .webtoon p { text-align: center; } .webtoon h3 { font-size: clamp(24px, 6vw, 30px); } }
 .panels { display: grid; gap: 14px; }
 .panel { margin: 0; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow); background: var(--card); border: 1px solid var(--line); }
 .panel img { display: block; width: 100%; }
 .panel figcaption { padding: 10px 16px 12px; font-size: 14px; color: var(--muted); }
-.gallery-head { margin-top: clamp(72px, 12vw, 140px); }
+.gallery-head { margin-top: var(--sec-y); }
+.gallery-head h3 { margin: 0; font-size: clamp(30px, 5vw, 52px); line-height: 1.16; letter-spacing: -0.025em; font-weight: 800; }
 .gallery { display: flex; gap: 14px; overflow-x: auto; margin: 0 -16px; padding: 24px 16px 56px; scroll-padding-inline: 16px; scroll-snap-type: x mandatory; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
 .gcard { flex: 0 0 232px; scroll-snap-align: start; margin: 0; position: relative; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
 .gcard img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
 .gcard figcaption {
-  position: absolute; left: 10px; bottom: 10px; padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
-  color: #fff; background: rgba(15, 10, 30, 0.55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  position: absolute; left: 10px; bottom: 10px; padding: 4px 12px; border-radius: 999px; font-size: 14px; font-weight: 700;
+  color: #fff; background: rgba(15, 10, 30, 0.66); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
 @media (max-width: 699px) { .bignums i { display: none; } .bignums { flex-direction: column; align-items: center; } }
 @media (min-width: 900px) {
@@ -148,14 +187,16 @@
   position: relative; overflow: hidden; max-width: 1048px; margin: 0 auto; text-align: center; border-radius: 36px;
   padding: clamp(56px, 10vw, 120px) 20px; color: #fff;
   background:
-    radial-gradient(60% 80% at 20% 0%, rgba(249, 168, 212, 0.55), transparent 70%),
-    radial-gradient(70% 90% at 90% 100%, rgba(167, 139, 250, 0.7), transparent 70%),
-    #261a4d;
+    radial-gradient(60% 80% at 15% 0%, rgba(249, 168, 212, 0.22), transparent 70%),
+    radial-gradient(70% 90% at 90% 100%, rgba(167, 139, 250, 0.45), transparent 70%),
+    #2a1d5c;
 }
 .final__card h2 { margin: 0; font-size: clamp(34px, 7vw, 72px); line-height: 1.14; letter-spacing: -0.025em; font-weight: 800; }
 .final__card p { margin: 16px 0 0; font-size: clamp(17px, 2.2vw, 21px); color: rgba(255, 255, 255, 0.82); }
 .final__card .pill { margin-top: 34px; background: #fff; color: #2a1856; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3); }
-.final__card .small { font-size: 14px; margin-top: 18px; color: rgba(255, 255, 255, 0.72); }
+.final__card .small { font-size: 14px; margin-top: 18px; color: rgba(255, 255, 255, 0.78); }
+.final__card .small a { color: #fff; text-underline-offset: 3px; }
+.final__card .pill { margin-bottom: 4px; }
 
 @media (max-width: 420px) {
   .hero__icon { width: 92px; height: 92px; border-radius: 21px; }
