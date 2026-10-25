@@ -82,7 +82,27 @@
       <p class="eyebrow">게임 화면</p>
       <h2 class="h2" id="screens-title">실제 게임 화면이에요.</h2>
     </div>
-    <!-- INTRO_VIDEO: 영상 담당의 site_embed_snippet.html 이 들어올 자리. 영상이 오면 이 줄을 그 내용으로 바꿉니다(README_v2.md 참고). 스타일은 game.css 의 .intro-video 에 준비돼 있습니다. -->
+    <figure class="intro-video">
+      <video id="intro-video" muted autoplay loop playsinline preload="metadata"
+             poster="assets/video/site_poster.jpg" width="540" height="960"
+             aria-label="이세계 히어로 소개 영상 30초(소리 없음): 몰려오는 마물을 자동 공격으로 정화하고, 레벨업 카드로 키우고, 보스 무대와 로비, 웹툰 이야기까지 보여 줍니다.">
+        <source src="assets/video/site_intro_540.mp4" type="video/mp4">
+        이 브라우저에서는 소개 영상을 볼 수 없어요.
+      </video>
+      <button type="button" class="intro-video__pause" id="intro-video-toggle" aria-controls="intro-video" aria-label="소개 영상 멈춤" data-label-pause="소개 영상 멈춤" data-label-play="소개 영상 재생">멈춤</button>
+      <figcaption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">소리 없이 자동으로 반복 재생되는 소개 영상입니다. 멈춤 버튼으로 멈출 수 있어요.</figcaption>
+    </figure>
+    <script>
+      // 소리 버튼 없음(자동 재생은 소리 없이). 움직임 줄이기 설정이면 자동 재생하지 않고, 멈춤/재생 버튼으로 직접 조절.
+      (function () {
+        var v = document.getElementById('intro-video'), b = document.getElementById('intro-video-toggle');
+        if (!v || !b) return;
+        function sync() { var p = v.paused; b.textContent = p ? '재생' : '멈춤'; b.setAttribute('aria-label', b.getAttribute(p ? 'data-label-play' : 'data-label-pause')); }
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
+        b.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
+        v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+      })();
+    </script>
     <div class="shots reveal" role="region" aria-label="게임 화면 (옆으로 넘겨 보세요)" tabindex="0">
       <figure class="shot"><img src="assets/img/screens/levelup.webp" width="540" height="960" loading="lazy" decoding="async" alt="게임 화면: 레벨업 때 나오는 카드 3장 중 하나를 고르는 모습이에요."></figure>
       <figure class="shot"><img src="assets/img/screens/evolve.webp" width="540" height="960" loading="lazy" decoding="async" alt="게임 화면: 무기와 짝이 맞는 패시브가 만나 왕 발도장으로 진화하는 컷인이에요."></figure>
