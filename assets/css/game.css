@@ -203,3 +203,65 @@ h1, h2, h3, .lead, .sub { text-wrap: balance; }
 }
 .intro-video { position: relative; }
 .intro-video__pause { position: absolute; right: 8px; bottom: 8px; padding: 6px 12px; min-height: 44px; border-radius: 999px; border: 1px solid var(--line); background: rgba(20,12,34,.72); color: #fff; font: inherit; font-size: 14px; cursor: pointer; }
+
+/* ===== v2.3 (1.0.3 대비): 접속 선물 배너 · 새 기능 · 공지사항 ===== */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+/* 접속 선물 배너 (히어로 맨 위). hidden 이면 자바스크립트가 기간 밖이라고 판단한 것 */
+.gift-banner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 12px;
+  max-width: 720px; margin: 0 auto 24px; padding: 8px 16px 2px; border-radius: 24px;
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+  text-align: center; font-size: 15px; line-height: 1.5;
+}
+.gift-banner[hidden] { display: none; }
+.gift-banner__tag { padding: 2px 12px; border-radius: 999px; background: var(--grad); color: var(--on-accent); font-weight: 800; font-size: 14px; white-space: nowrap; }
+.gift-banner__txt { margin: 0; color: var(--fg); font-weight: 600; text-wrap: balance; }
+.gift-banner__more { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; font-weight: 700; font-size: 14px; white-space: nowrap; }
+@media (max-width: 420px) { .gift-banner { border-radius: 20px; padding: 10px 16px 2px; } .gift-banner__tag { margin-bottom: 4px; } .gift-banner__txt { flex: 1 1 100%; } }
+@media (min-width: 421px) { .gift-banner { padding: 4px 16px; } }
+
+/* 새 기능 (가로로 넘기는 화면 줄) */
+.newfeat .fcard { min-height: 0; }
+.shots--feature { margin-top: clamp(36px, 6vw, 64px); }
+.shots--feature figure { display: flex; flex-direction: column; }
+.shots--feature img { aspect-ratio: 9 / 19.5; }
+.shots--feature figcaption { padding: 10px 12px 12px; font-size: 14px; line-height: 1.45; color: var(--muted); text-align: center; text-wrap: balance; }
+@media (min-width: 900px) {
+  .shots--feature { justify-content: flex-start; overflow-x: auto; }
+  .shots--feature figure { flex: 0 0 236px; }
+}
+.newfeat .screens__note { margin-top: 0; }
+
+/* 공지사항: 최신 글이 위, 한 항목 = 날짜 · 버전 · 제목 · 불릿 */
+.notice-list { list-style: none; margin: clamp(32px, 6vw, 56px) auto 0; padding: 0; max-width: 760px; display: grid; gap: 16px; }
+.notice-item {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: clamp(20px, 3.4vw, 30px);
+  border-radius: var(--r-lg); background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.notice-item { scroll-margin-top: calc(var(--nav-h) + 16px); }
+.notice-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; align-content: flex-start; }
+.notice-ver { padding: 3px 14px; border-radius: 999px; font-weight: 800; font-size: 15px; background: var(--grad); color: var(--on-accent); }
+.notice-date { font-size: 14px; color: var(--muted); }
+.notice-date[hidden] { display: none; }
+.notice-body { min-width: 0; }
+.notice-body h3 { margin: 0 0 8px; font-size: clamp(19px, 2.6vw, 23px); line-height: 1.35; letter-spacing: -0.015em; word-break: keep-all; text-wrap: balance; }
+.notice-body ul { margin: 0; padding-left: 1.2em; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.notice-body li { margin: 0 0 4px; }
+.notice-body .gift-ended { display: none; margin: 10px 0 0; font-size: 15px; font-weight: 700; color: var(--fg); }
+.gift-over .notice-body .gift-ended { display: block; }
+@media (min-width: 720px) {
+  .notice-item { grid-template-columns: 124px minmax(0, 1fr); gap: 24px; }
+  .notice-meta { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* 좁은 폭: 내비에 '공지사항'이 들어가도 한 줄에 들어오게 */
+@media (max-width: 420px) {
+  .site-header nav a { padding-left: 6px; padding-right: 6px; font-size: 13px; }
+  .site-header nav a.nav-get { padding: 0 14px; margin-left: 2px; }
+  .site-header .brand { font-size: 16px; }
+}
+@media (max-width: 380px) {
+  .site-header nav { gap: 2px; }
+  .site-header .brand { font-size: 15px; }
+}

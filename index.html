@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>이세계 히어로 | 한 손 마법소녀 뱀서라이크 - Dongry Games</title>
-<meta name="description" content="귀여운 도트 마법소녀와 함께하는 한 손 뱀서라이크. 3분 정도면 한 판, 30개 챕터 300 스테이지, 유료 뽑기 없음. Google Play에서 받으세요.">
+<title>이세계 히어로 | 한 손 마법소녀 뱀서라이크, 오늘의 도전·순찰 - Dongry Games</title>
+<meta name="description" content="귀여운 도트 마법소녀와 함께하는 한 손 뱀서라이크. 3분 정도면 한 판, 30개 챕터 300 스테이지, 오늘의 도전·순찰·도전 무대, 유료 뽑기 없음. Google Play에서 받으세요.">
 <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0912" media="(prefers-color-scheme: dark)">
 <link rel="canonical" href="https://dongrygames.com/">
@@ -12,7 +12,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Dongry Games">
 <meta property="og:title" content="이세계 히어로 | 한 손 마법소녀 뱀서라이크">
-<meta property="og:description" content="망돌이였던 내가 이세계에선 히어로? 3분 정도면 한 판, 귀여운 도트 마법소녀 뱀서라이크.">
+<meta property="og:description" content="망돌이였던 내가 이세계에선 히어로? 3분 정도면 한 판, 오늘의 도전과 순찰이 더해진 귀여운 도트 마법소녀 뱀서라이크.">
 <meta property="og:url" content="https://dongrygames.com/">
 <meta property="og:image" content="https://dongrygames.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -50,6 +50,7 @@
     <a class="brand" href="index.html">Dongry Games</a>
     <nav aria-label="주요 메뉴">
       <a href="index.html" data-nav="game" aria-current="page">이세계 히어로</a>
+      <a href="index.html#notice" data-nav="notice">공지사항</a>
       <a href="privacy.html" data-nav="policy">방침</a>
       <a href="mailto:whitesulhee@gmail.com">문의</a>
       <a class="nav-get" href="https://play.google.com/store/apps/details?id=com.mangdol.isekaihero" rel="noopener" aria-label="Google Play에서 받기">받기</a>
@@ -61,6 +62,26 @@
 
   <!-- 1. 히어로 -->
   <section class="hero" aria-labelledby="hero-title">
+    <!-- 접속 선물 배너(1.0.3). 기본은 항상 보임(자바스크립트가 꺼져도 깨지지 않음).
+         data-from="YYYY-MM-DD": 이 날짜 0시(한국 시간) 전에는 숨김. 빈 값이면 처음부터 보임. 게시할 때 여기 날짜만 바꾸면 됩니다.
+         data-until="2026-11-30": 이 날짜 23:59:59(한국 시간)가 지나면 자바스크립트가 자동으로 숨김.
+         data-publish-after: 1.0.3 이 구글 심사를 통과해 스토어에 나간 뒤에 공개합니다(게시_절차_1_0_3.md). -->
+    <aside class="gift-banner" id="gift-banner" data-from="" data-until="2026-11-30" data-publish-after="1.0.3 구글 심사 통과 후" aria-label="접속 선물 안내">
+      <span class="gift-banner__tag">접속 선물</span>
+      <p class="gift-banner__txt">11월 30일까지 접속하면 광고 제거 선물 &middot; 로비 [우편함]에서 받아요</p>
+      <a class="gift-banner__more" href="#notice">자세히 보기</a>
+    </aside>
+    <script>
+    /* 접속 선물 배너 표시 기간(한국 시간). 시계는 방문자 기기 시계를 따릅니다. */
+    (function () {
+      var b = document.getElementById('gift-banner'); if (!b) return;
+      function ms(s, t) { return /^\d{4}-\d{2}-\d{2}$/.test(s || '') ? Date.parse(s + t + '+09:00') : NaN; }
+      var now = Date.now(), from = ms(b.getAttribute('data-from'), 'T00:00:00'), until = ms(b.getAttribute('data-until'), 'T23:59:59');
+      var over = !isNaN(until) && now > until;
+      if ((!isNaN(from) && now < from) || over) b.hidden = true;
+      if (over) document.documentElement.className += ' gift-over';
+    })();
+    </script>
     <img class="hero__icon" src="assets/img/app-icon.png" width="256" height="256" alt="이세계 히어로 앱 아이콘">
     <p class="eyebrow">이세계 히어로</p>
     <h1 class="display" id="hero-title">망돌이였던 내가<br>이세계에선 히어로?</h1>
@@ -149,6 +170,55 @@
         <li>유료 뽑기 없음</li>
       </ul>
     </div>
+  </section>
+
+  <!-- 2-2. 새로 들어온 것들 (1.0.2 · 1.0.3). data-publish-after: 1.0.3 구글 심사 통과 후 공개(게시_절차_1_0_3.md) -->
+  <section class="section newfeat" id="new" aria-labelledby="new-title" data-publish-after="1.0.3 구글 심사 통과 후">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="eyebrow">업데이트</p>
+        <h2 class="h2" id="new-title">새로 들어온 것들.</h2>
+        <p class="lead">첫 챕터를 깨면 하나씩 열려요. 새 보상은 모두 정해진 값이에요.</p>
+      </div>
+      <div class="features">
+        <article class="fcard reveal">
+          <p class="fcard__k">오늘의 도전</p>
+          <h3>오늘의 규칙으로<br>150초 버티기.</h3>
+          <p>하루 한 번 강화와 부작용 규칙이 바뀌어요. 내 장비 그대로 150초를 버텨 보세요. 챕터 1을 깨면 열려요.</p>
+        </article>
+        <article class="fcard reveal">
+          <p class="fcard__k">순찰</p>
+          <h3>자리를 비워도<br>골드가 쌓여요.</h3>
+          <p>챕터 1을 깨면 로비에 순찰 칩이 생겨요. 쌓인 골드를 눌러서 받아요. 쌓이는 시간에는 한도가 있어요.</p>
+        </article>
+        <article class="fcard reveal">
+          <p class="fcard__k">도전 무대</p>
+          <h3>깬 챕터마다<br>도전 3판.</h3>
+          <p>챕터를 깨면 같은 무대를 더 단단한 적으로 만나는 도전 무대 3판이 열려요. 횟수 제한은 없어요.</p>
+        </article>
+        <article class="fcard reveal">
+          <p class="fcard__k">첫 주</p>
+          <h3>출석과 미션을<br>한 곳에서.</h3>
+          <p>퀘스트의 [첫 주] 탭에서 7일 미션을 채워요. 도장을 모으면 골드, 장비 선택권, 크리스탈을 받아요.</p>
+        </article>
+      </div>
+      <ul class="chips reveal" aria-label="새 기능 한눈에 보기">
+        <li>오늘의 도전</li>
+        <li>순찰</li>
+        <li>도전 무대</li>
+        <li>첫 주 미션</li>
+        <li>보상은 정해진 값</li>
+      </ul>
+    </div>
+    <div class="shots shots--feature reveal" role="region" aria-label="새 기능 화면 (옆으로 넘겨 보세요)" tabindex="0">
+      <figure class="shot"><img src="assets/img/screens/feat_daily_hub.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 이벤트 목록에 오늘의 도전 카드가 올라와 있어요."><figcaption>이벤트 목록의 오늘의 도전</figcaption></figure>
+      <figure class="shot"><img src="assets/img/screens/feat_daily_detail.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 오늘의 도전 상세. 강화 하나와 부작용 하나, 150초 버티기, 오늘 첫 클리어 고정 보상이 보여요."><figcaption>오늘의 규칙은 강화 하나, 부작용 하나</figcaption></figure>
+      <figure class="shot"><img src="assets/img/screens/feat_patrol_lobby.webp" width="450" height="975" loading="lazy" decoding="async" alt="게임 화면: 로비 위쪽의 순찰 칩에 쌓인 골드가 보이고, 아래로 설희와 메뉴 버튼이 있어요."><figcaption>로비 위쪽의 순찰 칩</figcaption></figure>
+      <figure class="shot"><img src="assets/img/screens/feat_challenge_list.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 챕터 1의 도전 무대 목록. 도전 1-1은 열려 있고 1-2와 1-3은 잠겨 있어요."><figcaption>챕터마다 열리는 도전 무대 3판</figcaption></figure>
+      <figure class="shot"><img src="assets/img/screens/feat_firstweek_tab.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 퀘스트의 첫 주 탭. 7일 출석 칸과 일차별 미션, 도장 상자 3개가 보여요."><figcaption>퀘스트의 [첫 주] 탭</figcaption></figure>
+      <figure class="shot"><img src="assets/img/screens/feat_mailbox_gift.webp" width="450" height="975" loading="lazy" decoding="async" alt="게임 화면: 로비 우편함에 접속 선물이 도착했고, 받기 버튼을 누르면 바로 적용된다는 안내가 있어요."><figcaption>로비 [우편함]의 접속 선물</figcaption></figure>
+    </div>
+    <p class="screens__note" aria-hidden="true">옆으로 넘겨 보세요 &rsaquo;</p>
   </section>
 
   <!-- 3. 30개 챕터, 300 스테이지 -->
@@ -272,6 +342,67 @@
     </div>
   </section>
 
+  <!-- 5-2. 공지사항 (업데이트 소식). 최신 글이 위. 항목 = 날짜 · 버전 · 제목 · 불릿.
+       항목이 많아지면 이 <ol> 을 notice.html 로 옮기고 여기에는 최신 2~3개와 '전체 보기' 링크만 둡니다.
+       날짜: li 의 data-date="YYYY-MM-DD" 를 채우면 자바스크립트가 화면에 '2026년 11월 1일' 로 표시합니다(비워 두면 버전만 보임).
+       data-publish-after 가 붙은 항목(1.0.2 · 1.0.3)은 1.0.3 이 구글 심사를 통과해 스토어에 나간 뒤에 공개하고, 게시할 때 날짜를 입력합니다(게시_절차_1_0_3.md). -->
+  <section class="section notice" id="notice" aria-labelledby="notice-title">
+    <div class="wrap">
+      <div class="center reveal">
+        <p class="eyebrow">업데이트 소식</p>
+        <h2 class="h2" id="notice-title">공지사항</h2>
+        <p class="lead">버전마다 달라진 점이에요. 최신 글이 위에 있어요.</p>
+      </div>
+      <ol class="notice-list" aria-label="공지사항 목록, 최신 글이 위">
+        <li class="notice-item reveal" id="notice-1-0-3" data-version="1.0.3" data-date="2026-11-01" data-publish-after="1.0.3 구글 심사 통과 후">
+          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.3</span></div>
+          <div class="notice-body">
+            <h3>11월 30일까지 접속하면 광고 제거 선물</h3>
+            <ul>
+              <li>1.0.3으로 업데이트하고 11월 30일(한국 시간 23:59)까지 로비에 들어오면 [우편함]에 광고 제거 선물이 도착해요.</li>
+              <li>[받기]를 누르면 광고 제거가 영구로 적용돼요. 받는 기한은 따로 없어요.</li>
+              <li>이미 광고 제거가 있으면 선물은 도착하지 않아요.</li>
+            </ul>
+            <p class="gift-ended">선물이 도착하는 기간은 끝났어요. 이미 도착한 선물은 우편함에서 받을 수 있어요.</p>
+          </div>
+        </li>
+        <li class="notice-item reveal" id="notice-1-0-2" data-version="1.0.2" data-date="" data-publish-after="1.0.3 구글 심사 통과 후">
+          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.2</span></div>
+          <div class="notice-body">
+            <h3>오늘의 도전 · 순찰 · 도전 무대 · 첫 주</h3>
+            <ul>
+              <li>새 기능: [오늘의 도전], [순찰], [도전 무대], 퀘스트의 [첫 주] 탭이 들어왔어요.</li>
+              <li>광고 제거가 있으면 상점 [광고 보고 받기]를 광고 없이 바로 받아요.</li>
+              <li>진화 카드를 고를 때 설희가 혼자 달리던 문제, 로비 안내 원이 반복되던 문제, 아직 안 열린 무기의 단짝 설명이 보이던 문제를 고쳤어요.</li>
+              <li>빛의 칼날과 빛의 구슬 사거리를 조정했고, 반짝 밑줄과 데뷔 CD가 더 일찍 열려요.</li>
+              <li>1~3장 마물 구성이 더 다양해졌어요.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="notice-item reveal" id="notice-1-0-1" data-version="1.0.1" data-date="">
+          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.1</span></div>
+          <div class="notice-body">
+            <h3>2배속 수정과 무기 조정</h3>
+            <ul>
+              <li>쿠폰으로 받은 광고 제거에서도 2배속이 열리도록 고쳤어요.</li>
+              <li>딸랑 파동, 점심 종, 반짝 밑줄, 무지개 밑줄을 강화했어요. 밑줄의 잔상은 더 오래 남아요.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="notice-item reveal" id="notice-1-0-0" data-version="1.0.0" data-date="">
+          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.0</span></div>
+          <div class="notice-body">
+            <h3>정식 출시</h3>
+            <ul>
+              <li>망돌이였던 내가 이세계에선 히어로? 한 손으로, 3분 정도면 한 판 즐기는 도트 마법소녀 뱀서라이크가 Google Play에 나왔어요.</li>
+              <li>30개 챕터 300 스테이지, 무기 8종, 패시브 8종, 진화 8종으로 시작해요.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <!-- 6. 마지막 CTA -->
   <section class="final" aria-labelledby="final-title">
     <div class="final__card reveal">
@@ -295,5 +426,15 @@
     <p class="site-footer__copy">&copy; Dongry Games &middot; 이 사이트는 쿠키나 분석 도구를 쓰지 않습니다.</p>
   </div>
 </footer>
+<script>
+/* 공지사항 날짜 표시: li 의 data-date="YYYY-MM-DD" 가 있을 때만 '2026년 11월 1일' 로 보입니다. */
+(function () {
+  var items = document.querySelectorAll('.notice-item');
+  for (var i = 0; i < items.length; i++) {
+    var d = items[i].getAttribute('data-date') || '', m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d), t = items[i].querySelector('.notice-date');
+    if (m && t) { t.textContent = m[1] + '년 ' + (+m[2]) + '월 ' + (+m[3]) + '일'; t.setAttribute('datetime', d); t.hidden = false; }
+  }
+})();
+</script>
 </body>
 </html>
