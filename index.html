@@ -62,26 +62,6 @@
 
   <!-- 1. 히어로 -->
   <section class="hero" aria-labelledby="hero-title">
-    <!-- 접속 선물 배너(1.0.3). 기본은 항상 보임(자바스크립트가 꺼져도 깨지지 않음).
-         data-from="YYYY-MM-DD": 이 날짜 0시(한국 시간) 전에는 숨김. 빈 값이면 처음부터 보임. 게시할 때 여기 날짜만 바꾸면 됩니다.
-         data-until="2026-11-30": 이 날짜 23:59:59(한국 시간)가 지나면 자바스크립트가 자동으로 숨김.
-         data-publish-after: 1.0.3 이 구글 심사를 통과해 스토어에 나간 뒤에 공개합니다(게시_절차_1_0_3.md). -->
-    <aside class="gift-banner" id="gift-banner" data-from="" data-until="2026-11-30" data-publish-after="1.0.3 구글 심사 통과 후" aria-label="접속 선물 안내">
-      <span class="gift-banner__tag">접속 선물</span>
-      <p class="gift-banner__txt">11월 30일까지 접속하면 광고 제거 선물 &middot; 로비 [우편함]에서 받아요</p>
-      <a class="gift-banner__more" href="#notice">자세히 보기</a>
-    </aside>
-    <script>
-    /* 접속 선물 배너 표시 기간(한국 시간). 시계는 방문자 기기 시계를 따릅니다. */
-    (function () {
-      var b = document.getElementById('gift-banner'); if (!b) return;
-      function ms(s, t) { return /^\d{4}-\d{2}-\d{2}$/.test(s || '') ? Date.parse(s + t + '+09:00') : NaN; }
-      var now = Date.now(), from = ms(b.getAttribute('data-from'), 'T00:00:00'), until = ms(b.getAttribute('data-until'), 'T23:59:59');
-      var over = !isNaN(until) && now > until;
-      if ((!isNaN(from) && now < from) || over) b.hidden = true;
-      if (over) document.documentElement.className += ' gift-over';
-    })();
-    </script>
     <img class="hero__icon" src="assets/img/app-icon.png" width="256" height="256" alt="이세계 히어로 앱 아이콘">
     <p class="eyebrow">이세계 히어로</p>
     <h1 class="display" id="hero-title">망돌이였던 내가<br>이세계에선 히어로?</h1>
@@ -216,7 +196,6 @@
       <figure class="shot"><img src="assets/img/screens/feat_patrol_lobby.webp" width="450" height="975" loading="lazy" decoding="async" alt="게임 화면: 로비 위쪽의 순찰 칩에 쌓인 골드가 보이고, 아래로 설희와 메뉴 버튼이 있어요."><figcaption>로비 위쪽의 순찰 칩</figcaption></figure>
       <figure class="shot"><img src="assets/img/screens/feat_challenge_list.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 챕터 1의 도전 무대 목록. 도전 1-1은 열려 있고 1-2와 1-3은 잠겨 있어요."><figcaption>챕터마다 열리는 도전 무대 3판</figcaption></figure>
       <figure class="shot"><img src="assets/img/screens/feat_firstweek_tab.webp" width="498" height="1080" loading="lazy" decoding="async" alt="게임 화면: 퀘스트의 첫 주 탭. 7일 출석 칸과 일차별 미션, 도장 상자 3개가 보여요."><figcaption>퀘스트의 [첫 주] 탭</figcaption></figure>
-      <figure class="shot"><img src="assets/img/screens/feat_mailbox_gift.webp" width="450" height="975" loading="lazy" decoding="async" alt="게임 화면: 로비 우편함에 접속 선물이 도착했고, 받기 버튼을 누르면 바로 적용된다는 안내가 있어요."><figcaption>로비 [우편함]의 접속 선물</figcaption></figure>
     </div>
     <p class="screens__note" aria-hidden="true">옆으로 넘겨 보세요 &rsaquo;</p>
   </section>
@@ -354,16 +333,14 @@
         <p class="lead">버전마다 달라진 점이에요. 최신 글이 위에 있어요.</p>
       </div>
       <ol class="notice-list" aria-label="공지사항 목록, 최신 글이 위">
-        <li class="notice-item reveal" id="notice-1-0-3" data-version="1.0.3" data-date="2026-11-01" data-publish-after="1.0.3 구글 심사 통과 후">
-          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.3</span></div>
+        <li class="notice-item reveal" id="notice-1-0-4" data-version="1.0.4" data-date="2026-11-02">
+          <div class="notice-meta"><time class="notice-date" hidden></time><span class="notice-ver"><span class="sr-only">버전 </span>1.0.4</span></div>
           <div class="notice-body">
-            <h3>11월 30일까지 접속하면 광고 제거 선물</h3>
+            <h3>스킬 프리셋 · 로비 우편함</h3>
             <ul>
-              <li>1.0.3으로 업데이트하고 11월 30일(한국 시간 23:59)까지 로비에 들어오면 [우편함]에 광고 제거 선물이 도착해요.</li>
-              <li>[받기]를 누르면 광고 제거가 영구로 적용돼요. 받는 기한은 따로 없어요.</li>
-              <li>이미 광고 제거가 있으면 선물은 도착하지 않아요.</li>
+              <li>스킬 프리셋이 처음 깨는 판에서도 적용돼요. 보스 판은 직접 골라요.</li>
+              <li>로비 위쪽 [가이드] 아래에 [우편함] 버튼이 늘 보여요. 도착한 우편이 없으면 빈 우편함이 열려요.</li>
             </ul>
-            <p class="gift-ended">선물이 도착하는 기간은 끝났어요. 이미 도착한 선물은 우편함에서 받을 수 있어요.</p>
           </div>
         </li>
         <li class="notice-item reveal" id="notice-1-0-2" data-version="1.0.2" data-date="" data-publish-after="1.0.3 구글 심사 통과 후">
